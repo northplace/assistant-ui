@@ -6,7 +6,10 @@ import type { Run } from "openai/resources/beta/threads/runs/runs";
 export const maxDuration = 30;
 
 export async function POST(req: Request) {
-  const openai = new OpenAI();
+  const openai = new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY,
+    organization: process.env.OPENAI_ORGANIZATION_ID,
+  });
 
   // Parse the request body
   const input: {
@@ -29,10 +32,7 @@ export async function POST(req: Request) {
       // Run the assistant on the thread
       const runStream = openai.beta.threads.runs.stream(threadId, {
         assistant_id:
-          process.env["ASSISTANT_ID"] ??
-          (() => {
-            throw new Error("ASSISTANT_ID is not set");
-          })(),
+          process.env.ASSISTANT_ID || "asst_e8L6Ed0eUASqxZ8yKfjyE2W2",
       });
 
       // forward run status would stream message deltas
