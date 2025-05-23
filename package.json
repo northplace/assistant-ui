@@ -11,8 +11,11 @@
   "dependencies": {
     "@assistant-ui/react": "^0.10.10",
     "@assistant-ui/react-ai-sdk": "^0.10.10",
+    "@ai-sdk/react": "^1.2.12",
+    "ai": "^2.2.37",
     "ai": "^2.2.37",
     "next": "14.1.0",
+    "openai": "^4.28.0",
     "openai": "^4.28.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -24,6 +27,8 @@
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0",
     "postcss": "^8",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
